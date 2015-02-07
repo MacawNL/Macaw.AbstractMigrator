@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Macaw.AbstractMigrator</RootNamespace>
+    <AssemblyName>Macaw.AbstractMigrator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractMigrator.cs" />
+    <Compile Include="AbstractMigrationTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Automatic\AutomaticMigration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Automatic\IAutomaticMigration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Automatic\MigrationTracker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CavemanTools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DatabaseMigration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IConfigureMigrationsRunner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IManageMigrations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMigrateSchema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMigrationTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRunMigrations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MigrationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MigrationNotFound.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MigrationsManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MigrationTaskRunner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ModifiedSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchemaMigrationExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SemanticVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

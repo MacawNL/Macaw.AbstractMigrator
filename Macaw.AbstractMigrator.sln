@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macaw.AbstractMigrator", "Macaw.AbstractMigrator\Macaw.AbstractMigrator.csproj", "{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F85626A4-43FA-452F-B922-5103919294C2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macaw.AbstractMigrator.Tests", "Macaw.AbstractMigrator.Tests\Macaw.AbstractMigrator.Tests.csproj", "{F25EB3DA-A865-43AD-AA58-C5F34F493B29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92FFB497-4A72-4966-AE7F-C3E983479C0A}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5EA407B-D35B-4DD8-9CAC-5A18F712C6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25EB3DA-A865-43AD-AA58-C5F34F493B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25EB3DA-A865-43AD-AA58-C5F34F493B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25EB3DA-A865-43AD-AA58-C5F34F493B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25EB3DA-A865-43AD-AA58-C5F34F493B29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
