@@ -24,7 +24,7 @@ namespace Macaw.AbstractMigrator.Tests
     }
 
     [Migration("1.0.0", SchemaName = "AutomaticMigration")]
-    public class AutomaticMigrationSetupTask : AbstractMigrationTask<SqlFu.SqlFuConnection>
+    public class SqlFuAutomaticMigrationSetupTask : AbstractMigrationTask<SqlFu.SqlFuConnection>
     {
         /// <summary>
         /// Task is executed automatically in a transaction
@@ -44,7 +44,7 @@ namespace Macaw.AbstractMigrator.Tests
 
 
     [Migration("1.0.0", SchemaName = "PlopSchema")]
-    public class Migration1 : AbstractMigrationTask<SqlFu.SqlFuConnection>
+    public class SqlFuMigration1 : AbstractMigrationTask<SqlFu.SqlFuConnection>
     {
         public override void Execute(SqlFuConnection db)
         {
@@ -108,10 +108,10 @@ namespace Macaw.AbstractMigrator.Tests
         }
     }
 
-    public class AutomaticMigrationRepo : IAutomaticMigrationRepository<SqlFu.SqlFuConnection>
+    public class SqlFuAutomaticMigrationRepo : IAutomaticMigrationRepository<SqlFu.SqlFuConnection>
     {
         SqlFu.SqlFuConnection _db;
-        public AutomaticMigrationRepo(SqlFu.SqlFuConnection db)
+        public SqlFuAutomaticMigrationRepo(SqlFu.SqlFuConnection db)
         {
             _db = db;
         }
@@ -156,8 +156,8 @@ namespace Macaw.AbstractMigrator.Tests
             {
                 DatabaseMigration<SqlFuConnection>
                     .ConfigureFor(db)
-                    .SearchAssemblyOf<Migration1>()
-                    .WithAutomaticMigrationRepository(new AutomaticMigrationRepo(db))
+                    .SearchAssemblyOf<SqlFuMigration1>()
+                    .WithAutomaticMigrationRepository(new SqlFuAutomaticMigrationRepo(db))
                     .WithUnitOfWorkCreator(new DatabaseTransactionManager())
                     .PerformAutomaticMigrations();
             }

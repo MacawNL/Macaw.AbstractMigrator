@@ -10,12 +10,12 @@ FluentMigrator and they do the job as well.
 
 Lately however, I've crossed paths with a few nonrelational databases, such as OrientDB and Azure Search. These are not based on SQL, but they do 
 let you create schema, indexes, procedures, scripts etc. .NET support for these databases is very basic: usually just a small wrapper around a REST interface or 
-Socket connection, there's no Linq, no Entity Framework, no DbConnection, no supporty in Micro ORM's and no fast object mapping. And for sure, there is no 
+Socket connection, there's no Linq, no Entity Framework, no DbConnection, no support in Micro ORMs and no fast object mapping. And for sure, there is no 
 support for automatic migrations.
 
-I order to get migrations and be able to deploy to these newfangled databases with confidence, I 've created Macaw.AbstractMigrations. It's a blatant ripoff 
-of the migrations code in SqlFu, but I abstracted all references to SqlFu itself and to DbConnection and replaced it with a generic &lt;TDatabase&gt; parameter so 
-that I'm left with just the generic Migration framework. There are no dependencies other than basic .NET.
+I order to get migrations with these databases and be able to deploy to these newfangled databases with confidence, I 've created Macaw.AbstractMigrations. 
+It's a blatant ripoff of the migrations code in SqlFu, but I abstracted all references to SqlFu itself and to DbConnection and replaced it with a generic 
+&lt;TDatabase&gt; parameter so that I'm left with just the generic Migration framework. There are no dependencies other than basic .NET.
 
 In order to use it, you need to supply several things:
 ## (one or more) MigrationTasks
@@ -31,7 +31,7 @@ In a normal migration framework it would stop here and you'd be able to run your
 However, because Macaw AbstractMigrator does not know your database you need to supply a few more things:
 
 ## AutomaticMigration repository
-You supply an implementation of IAutomaticMigrationRepository&lt;TDatabase&lt;. This repository is used to store the upgrade history and current state of 
+You supply an implementation of IAutomaticMigrationRepository&lt;TDatabase&gt;. This repository is used to store the upgrade history and current state of 
 your schemas.
 
 ## A MigrationTask for your AutomaticMigration repository
@@ -41,6 +41,7 @@ reserved SchemaName "AutomaticMigration". It follows the exact same rules as any
 ## (optionally) A IUnitOfWorkCreator
 If your database supports transactions, you should implement and supply a function that creates one. The function should return an IUnitOfWork, which
 (for a relational database) wraps a transaction object and implements the Commit function with it.
+
 
 
 ### Licence
